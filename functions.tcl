@@ -37,3 +37,13 @@ proc create_supercell { molIn abc x y z} {
 proc save_xyz { molOut fileOut } {
    animate write xyz $fileOut $molOut
 }
+
+proc vmd_draw_arrow {mol start end} {
+   # an arrow is made of a cylinder and a cone
+   set middle [vecadd $start [vecscale 0.8 [vecsub $end $start]]]
+   graphics $mol materials on
+   graphics $mol material Opaque
+   graphics $mol color orange
+   graphics $mol cylinder $start $middle radius 0.15 resolution 20
+   graphics $mol cone $middle $end radius 0.25 resolution 20
+}
