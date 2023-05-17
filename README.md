@@ -1,3 +1,7 @@
+# Discontinued
+
+**Developement continues [here](https://github.com/Tonner-Zech-Group/VMD-scripts).** 
+
 # VMDTools
 Little scripts and functions to make my work with VMD easier
 
