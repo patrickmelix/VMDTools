@@ -16,9 +16,10 @@ do
 
    echo $file
    basefile=`basename $file .dat`
-   sed -i 's/Resolution.*/Resolution 7664 4164/' $file
-   tachyon  -aasamples 12 $file -format TARGA -o ${basefile}.tga
+   path=`dirname $file`
+   sed -i 's/Resolution.*/Resolution 7664 4164/' ${file}
+   tachyon  -aasamples 12 ${file} -format TARGA -o ${path}/${basefile}.tga
    #tga2png.sh ${basefile}.tga
-   convert -trim ${basefile}.tga ${basefile}.png
-   rm ${basefile}.tga
+   convert -trim ${path}/${basefile}.tga ${path}/${basefile}.png
+   rm ${path}/${basefile}.tga
 done
